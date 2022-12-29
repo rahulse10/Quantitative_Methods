@@ -87,17 +87,3 @@ ggplot(data = ess, aes(x=eduyrs, y=imwbcnt)) +
   geom_smooth(aes(x = eduyrs, y = imwbcnt), method = "lm", formula = y ~ x)+
   labs(x = 'Education years', y = 'Positive attitude towards immigrants')
 
-
-
-#plot
-ggplot(ess1_pred, aes(x = agea, y = happy, color = factor(religion,
-                                                          labels = c("No",
-                                                                     "Yes")))) +
-  geom_point(alpha = 0.1) +
-  geom_smooth(aes(x = agea, y = fit), method = "gam", formula = y ~ s(x, bs ="cs"),
-              show.legend = TRUE, se = FALSE) +
-  guides (color=guide_legend(override.aes = list(fill=NA)))+
-  labs()
-       x = "Age", y = "Happy", caption = "Source: European Social Survey", 
-       color = "Belonging to a particular religion or denomination")+ 
-  apatheme
